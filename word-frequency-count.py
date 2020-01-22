@@ -132,6 +132,9 @@ if __name__ == "__main__":
     addStringToFile(outputFilename,
                     "Elapsed running time: " + str(runningTime) + " seconds\n")
     addStringToFile(outputFilename, "Word Counter:\n")
-    addStringToFile(outputFilename, sorted(totalWordsInDocument.items(),
-                                          key=lambda kv: (kv[1], kv[0])))
+
+    totalWordsInDocument = sorted(totalWordsInDocument.items(),
+                                  key=lambda kv: (kv[1], kv[0]))
+    for word in totalWordsInDocument:
+        addStringToFile(outputFilename, str(word) + "\n")
     pass
